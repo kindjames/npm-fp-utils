@@ -1,0 +1,32 @@
+{
+  "name": "@kindjames/fp-utils",
+  "version": "0.0.0",
+  "engines": {
+    "node": "10.5.*",
+    "npm": "6.2.*"
+  },
+  "main": "./bin/index.js",
+  "types": "./bin/index.d.ts",
+  "scripts": {
+    "build": "rimraf bin && tsc",
+    "test": "ava-ts",
+    "test:watch": "ava-ts --watch",
+    "release": "npm run build && np"
+  },
+  "dependencies": {
+    "node-fetch": "2.2.0",
+    "ramda": "0.25.0",
+    "ramda-adjunct": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "10.7.1",
+    "@types/node-fetch": "2.1.2",
+    "@types/ramda": "0.25.36",
+    "ava": "0.25.0",
+    "ava-ts": "0.25.1",
+    "np": "^3.0.4",
+    "rimraf": "^2.6.2",
+    "ts-node": "7.0.1",
+    "typescript": "3.0.1"
+  }
+}

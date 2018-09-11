@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "target": "es6",
+    "lib": [
+      "es2015"
+    ],
+    "rootDir": "src",
+    "outDir": "bin",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true
+  },
+  "exclude": [
+    "node_modules",
+    "bin",
+    "test"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}
