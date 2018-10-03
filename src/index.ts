@@ -2,13 +2,13 @@ import * as fs from 'fs'
 import fetch from 'node-fetch'
 import { always, concat, cond, curryN, either, invoker, isEmpty, join, map, pipe, T, tap, toPairs, unless, when } from 'ramda'
 import { isNull, isObjectLike, isUndefined, thenP } from 'ramda-adjunct'
-import { promisify } from 'util'
+import { promisify, inspect } from 'util'
 
 export const report = (label: string) =>
   tap(pipe(
     cond([
       [either(isNull, isUndefined), always('')],
-      [isObjectLike, pipe(toJson, concat(' \n'))],
+      [isObjectLike, pipe(toPrintable, concat(' \n'))],
       [T, x => ' ' + x]
     ]),
     when(isObjectLike, toJson),
@@ -19,6 +19,9 @@ export const report = (label: string) =>
 export const writeFile = curryN(2, promisify(fs.writeFile))
 
 export const readFile = curryN(1, promisify(fs.readFile))
+
+export const toPrintable = (x: any) =>
+  inspect(x, false, null, true)
 
 export const toJson = (x: any) =>
   JSON.stringify(x, null, 2)

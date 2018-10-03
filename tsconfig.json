@@ -10,6 +10,7 @@
     "outDir": "bin",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
+    "noImplicitAny": true,
     "strict": true
   },
   "exclude": [
